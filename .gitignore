@@ -1,0 +1,11 @@
+# ビルド生成物
+.gradle/
+build/
+app/build/
+local.properties
+
+# ローカルで再生成するライブラリ AAR（容量が大きいため同梱しない。再生成手順は README 参照）
+app/libs/*.aar
+
+# 配布物
+*.apk

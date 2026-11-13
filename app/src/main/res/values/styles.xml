@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- 赤＋白テーマ: #F44336 を基調、ステータスバーは一段濃い #D32F2F -->
+    <style name="AppTheme" parent="@android:style/Theme.Material.Light.NoActionBar">
+        <item name="android:colorPrimary">#F44336</item>
+        <item name="android:colorPrimaryDark">#D32F2F</item>
+        <item name="android:colorAccent">#F44336</item>
+        <item name="android:statusBarColor">#D32F2F</item>
+    </style>
+</resources>
