@@ -731,9 +731,17 @@ class HistoryActivity : Activity() {
             orientation = LinearLayout.VERTICAL; setBackgroundColor(LIGHT_BG)
             setPadding(dp(12), dp(12), dp(12), dp(12))
         }
-        root.addView(TextView(this).apply {
-            text = "私のダウンロード"; textSize = 19f; setTypeface(null, Typeface.BOLD); setTextColor(DARK)
+        // ヘッダー（戻るボタン＋タイトル）
+        val header = LinearLayout(this).apply { orientation = LinearLayout.HORIZONTAL; gravity = Gravity.CENTER_VERTICAL }
+        header.addView(Button(this).apply {
+            text = "← 戻る"; textSize = 14f; setTextColor(Color.WHITE)
+            background = rounded(BRAND_RED, 12, this@HistoryActivity); setPadding(dp(14), dp(4), dp(14), dp(4))
+            setOnClickListener { finish() }
         })
+        header.addView(TextView(this).apply {
+            text = "私のダウンロード"; textSize = 19f; setTypeface(null, Typeface.BOLD); setTextColor(DARK)
+        }, LinearLayout.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT).apply { leftMargin = dp(12) })
+        root.addView(header)
         root.addView(TextView(this).apply {
             text = "保存先: $DL_DIR（長押しで操作メニュー）"; textSize = 12f; setTextColor(Color.GRAY)
         })
